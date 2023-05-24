@@ -1,4 +1,7 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## About
+This is my personal website :)
+You can visit [this link](https://saki-imai.web.app/) to see the latest version.
+
 
 ## Getting Started
 
