@@ -22,8 +22,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={ptserif.className}>
-        <div className="w-screen h-screen fixed top-0 z-0">
-          <div className="w-screen h-screen relative bg-img">
+        <div className="w-full h-full fixed top-0 z-0">
+          <div className="w-full h-full relative bg-img">
             <div className="w-full h-full grid grid-cols-12 space-x-6 px-20">
               {Array.from(Array(12).keys()).map((index: number) => (
                 <div
@@ -32,31 +32,33 @@ export default function RootLayout({
                 ></div>
               ))}
             </div>
-            <div className="absolute top-0 left-0 w-screen h-screen bg-gradient-to-t from-neutral-200 via-transparent to-transparent"></div>
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-t from-neutral-200 via-transparent to-transparent"></div>
           </div>
         </div>
 
-        <main className="w-screen h-screen relative bg-transparent">
-          <div className="w-screen h-screen absolute top-0 left-0 bg-transparent flex flex-col justify-between">
+        <main className="w-full h-full relative bg-transparent">
+          <div className="w-full h-full absolute top-0 left-0 bg-transparent flex flex-col justify-between">
             <Header></Header>
+            <div className="justify-center items-center">
             {children}
+            </div>
 
-            <div className="border-y w-screen px-40 py-20 border-black/5  shadow-footer shadow-gray-200/60">
-              <div className="flex flex-row w-full justify-start items-center">
+            <div className="border-y w-full p-10 xl:px-40 py-20 border-black/5  shadow-footer shadow-gray-200/60">
+              <div className=" w-full justify-start items-center">
                 {/* <img src="/star2.svg" className="w-20 mr-10" /> */}
                 <div className="flex flex-col">
                   <span className="text-xl font-semibold pb-5">
                     Let&apos;s talk!
                   </span>
-                  <span className=" text-l font-medium w-1/2 pb-3">
+                  <span className=" text-l font-medium w-full xl:w-1/2 pb-3">
                     Whether you have a job opening, wish to reach out, or simply
                     want to say hello, please don&apos;t hesitate to get in touch. I
                     would be thrilled to hear from you.
                   </span>
                   <div className="flex flex-row space-x-5">
-                    <span className="h-10 w-1/5 cursor-pointer appearance-none items-center justify-center rounded-full border border-stone-200 bg-black shadow outline-none inline-flex flex-row">
+                    <span className="h-10 w-1/5 px-4 cursor-pointer appearance-none items-center justify-center rounded-full border border-stone-200 bg-black shadow outline-none inline-flex flex-row min-w-fit">
                       <AiOutlineMail color="white" className="mr-2" />
-                      <span className="text-l text-white">
+                      <span className="text-xs xl:text-lg text-white">
                         simai24@colby.edu
                       </span>
                     </span>
@@ -84,20 +86,3 @@ export default function RootLayout({
     </html>
   );
 }
-
-// export default function RootLayout({
-//   children,
-// }: {
-//   children: React.ReactNode;
-// }) {
-//   return (
-//     <html lang="en" className={`${SpaceMono.className} ${SpaceMono.variable} font-spaceMono`}>
-//       <body>
-//         <div className="flex flex-col w-screen min-h-screen overflow-hidden">
-//           <Header></Header>
-//           {children}
-//         </div>
-//       </body>
-//     </html>
-//   );
-// }

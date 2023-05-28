@@ -1,72 +1,66 @@
 "use client";
+import { AiOutlineMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
+import { SiGooglescholar } from "react-icons/si";
+import { SocialButton } from "@/components";
 
 export default function contact() {
-
   return (
-    <>
-      <div className="px-40">
-        <div className="flex flex-row w-full justify-start">
-          {/* <img src="/star2.svg" className="w-20 mr-10" /> */}
-          <div className="flex flex-col pb-14">
-            <span className=" text-4xl font-semibold pb-3">
-              Love to hear from you,
-            </span>
-            <span className=" text-4xl font-semibold ">Get in touch!</span>
+    <div className="px-10 xl:px-40 2xl:px-60 py-10 md:py-16 lg:py-20 xl:py-24">
+      <div className="flex flex-col md:flex-row w-full justify-between">
+        <div className="flex flex-col pb-10 md:pb-0 md:w-3/4">
+          <h2 className="text-xl md:text-2xl xl:text-4xl font-semibold pb-3 lg:pb-5">
+            Love to hear from you,
+          </h2>
+          <h2 className="text-xl md:text-2xl xl:text-4xl font-semibold pb-3 lg:pb-5">
+            Get in touch!
+          </h2>
+          <p className="text-base md:text-lg xl:text-xl font-semibold pb-3 lg:pb-5">
+            Find me on:
+          </p>
+          <div className="p-6 bg-gradient-to-tr from-zinc-50 to-zinc-100 backdrop-blur-sm rounded-md border border-zinc-50 opacity-80 min-w-fit max-w-fit">
+            <div className="flex flex-col py-3">
+              <div className="flex flex-row items-center space-x-5">
+                <AiOutlineMail color="black" size={30} />
+                <span className="text-base md:text-lg xl:text-xl text-black">
+                  simai24@colby.edu
+                </span>
+              </div>
+              <div className="flex flex-row items-center space-x-5">
+                <SocialButton
+                  icon={<AiFillLinkedin className="text-blue-500" size={30} />}
+                  link="https://www.linkedin.com/in/saki-imai-1204/"
+                />
+                <span className="text-base md:text-lg xl:text-xl text-black">
+                  @saki-imai-1204
+                </span>
+              </div>
+              <div className="flex flex-row items-center space-x-5">
+                <SocialButton
+                  icon={<AiFillGithub size={30} />}
+                  link="https://github.com/saki-imai-1204"
+                />
+                <span className="text-base md:text-lg xl:text-xl text-black">
+                  @saki-imai-1204
+                </span>
+              </div>
+              <div className="flex flex-row items-center space-x-5">
+                <SocialButton
+                  icon={<SiGooglescholar size={30} />}
+                  link="https://scholar.google.com/citations?user=ZUSP9qIAAAAJ&hl=en"
+                />
+                <span className="text-base md:text-lg xl:text-xl text-black">
+                  Saki Imai
+                </span>
+              </div>
+            </div>
           </div>
         </div>
-
-        <form
-          id="contact-form">
-          <label
-            htmlFor="input-group-1"
-            className="block mb-2 text-sm font-medium text-gray-900"
-          >
-            Your Email
-          </label>
-          <div className="relative mb-6">
-            <div className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-              <svg
-                aria-hidden="true"
-                className="w-5 h-5 text-black"
-                fill="currentColor"
-                viewBox="0 0 20 20"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
-                <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
-              </svg>
-            </div>
-            <input
-              type="text"
-              id="input-group-1"
-              className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-black focus:border-black block w-full pl-10 p-2.5"
-              placeholder="name@yourdreams.com"
-              required
-            ></input>
-          </div>
-
-          <div className="mb-6">
-            <label
-              htmlFor="message"
-              className="block mb-2 text-sm font-medium text-gray-900"
-            >
-              Your message
-            </label>
-            <textarea
-              id="message"
-              rows={4}
-              className="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 "
-              placeholder="Leave a comment..."
-            ></textarea>
-          </div>
-          <button
-            type="submit"
-            className="text-white bg-black shadow-md transition duration-150 ease-in-out hover:bg-gray-600 hover:shadow-lg focus:bg-gray-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-gray-700 active:shadow-lg font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center"
-          >
-            Send
-          </button>
-        </form>
+        <img
+          src="/email.svg"
+          className="w-full md:w-1/2 mt-10 md:mt-0"
+          alt="Email Illustration"
+        />
       </div>
-    </>
+    </div>
   );
 }

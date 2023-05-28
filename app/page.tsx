@@ -1,7 +1,5 @@
 "use client";
 
-import Image from "next/image";
-
 import {
   AiFillCheckSquare,
   AiOutlineMail,
@@ -14,53 +12,70 @@ import { HiCode } from "react-icons/hi";
 
 import { ProjectCard, SocialButton } from "@/components";
 
-import { Grand_Hotel } from "next/font/google";
-
 import { useRouter } from "next/navigation";
 
-const grandHotel = Grand_Hotel({ weight: ["400"], subsets: ["latin"] });
-
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
-
 export default function Home() {
-
-  // const firebaseConfig = {
-  //   apiKey: "AIzaSyAeSC6TM9qjicRbdbQWsUsfSqgi95UBLgM",
-  //   authDomain: "saki-imai.firebaseapp.com",
-  //   projectId: "saki-imai",
-  //   storageBucket: "saki-imai.appspot.com",
-  //   messagingSenderId: "960382418718",
-  //   appId: "1:960382418718:web:a061b98a3001cd09ec130f",
-  //   measurementId: "G-GLS0CXNQ87"
-  // };
-  
-  // // Initialize Firebase
-  // const app = initializeApp(firebaseConfig);
-  // const analytics = getAnalytics(app);
+  const router = useRouter();
 
   return (
     <>
-      <div className="px-40">
-        <div className="flex flex-row w-full py-40 justify-start items-center">
-          {/* <img src="/star2.svg" className="w-20 mr-10" /> */}
-          <div className="flex flex-col">
-            <span className="text-xl font-medium pb-5">
-              Saki Imai—Software Engineer{" "}
+      <div className="px-10 xl:px-40 2xl:px-60 max-w-screen overflow-hidden">
+        <div className="flex py-10 xl:py-32 2xl:py-48 flex-col md:flex-row">
+          <div className="flex flex-col basis-3/4">
+            <div className="mb-6">
+              <span className=" text-xl lg:text-2xl xl:text-4xl font-semibold ">Hi! I am</span>
+              <span className=" text-xl lg:text-2xl xl:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 via-pink-400 to-blue-400">
+                {" "}
+                Saki Imai
+              </span>
+            </div>
+            <span className=" text-xl lg:text-2xl xl:text-4xl font-semibold mb-6">
+              an aspiring Software Engineer{" "}
             </span>
-            <span className=" text-4xl font-semibold ">
-              I use ChatGPT to write efficient code :)
+            <span className=" text-xl lg:text-2xl xl:text-4xl font-semibold mb-6">
+              and a student researcher at Colby College
             </span>
+            <span className=" text-xl lg:text-2xl xl:text-4xl font-semibold mb-6">
+              currently based in the United States.{" "}
+            </span>
+          </div>
+          <div className="flex flex-wrap justify-center basis-1/4">
+            <div className="w-1/3 md:w-1/2">
+              <img
+                src="/Saki_resized.png"
+                alt="..."
+                className="shadow rounded-full max-w-full h-auto align-middle border-none"
+              />
+            </div>
           </div>
         </div>
 
-        <div className="flex py-40 justify-between space-x-20">
+        <div className="flex flex-row space-x-5 pb-10 xl:pb-32 2xl:pb-48">
+          <button
+            className="h-10 w-1/5 px-4 cursor-pointer appearance-none items-center justify-center rounded-full border border-stone-200 bg-black shadow outline-none inline-flex flex-row min-w-fit"
+            onClick={() => router.push("/contact")}
+          >
+            <AiOutlineMail color="white" className="mr-2" />
+            <span className="text-xs xl:text-lg text-white">Contact Me</span>
+          </button>
+          <SocialButton
+            icon={<AiFillLinkedin className="text-blue-500" size={30} />}
+            link="https://www.linkedin.com/in/saki-imai-1204/"
+          />
+          <SocialButton
+            icon={<AiFillGithub size={30} />}
+            link="https://github.com/saki-imai-1204"
+          />
+          <SocialButton
+            icon={<SiGooglescholar size={30} />}
+            link="https://scholar.google.com/citations?user=ZUSP9qIAAAAJ&hl=en"
+          />
+        </div>
+
+        <span className="flex font-bold items-center text-xl lg:text-2xl xl:text-4xl justify-center mb-20">
+          What I Do
+        </span>
+        <div className="flex flex-col xl:flex-row xl:justify-between space-y-10 xl:space-y-0 xl:space-x-20 mb-40">
           <div className="flex flex-col space-y-5">
             <AiFillCheckSquare size={30} />
             <span className="font-semibold ">Machine Learning</span>
@@ -91,10 +106,10 @@ export default function Home() {
           </div>
         </div>
 
-        <span className="flex font-bold items-center text-4xl justify-center">
+        <span className="flex font-bold items-center text-xl lg:text-2xl xl:text-4xl justify-center">
           Projects
         </span>
-        <div className="pb-40">
+        <div className="pb-10 lg:pb-20 xl:pb-40">
           <ProjectCard
             orientation="right"
             image={"/colbycourses.png"}
@@ -120,7 +135,7 @@ export default function Home() {
           <ProjectCard
             orientation="right"
             image={"/SRC-poster.svg"}
-            demo={""}
+            demo={"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZUSP9qIAAAAJ&citation_for_view=ZUSP9qIAAAAJ:u-x6o8ySG0sC"}
             title={"Eye tracking research"}
             text={
               "Designed and developed efficient PyQt5-based eye tracking analysis software, enabling a comprehensive comparison between human pair-programming and pair-programming with GitHub Copilot.\
@@ -142,10 +157,10 @@ export default function Home() {
           />
         </div>
 
-        <span className="flex items-center font-bold text-4xl justify-center my-20">
+        <span className="flex items-center font-bold text-xl lg:text-2xl xl:text-4xl justify-center my-20">
           Experiences
         </span>
-        <div className="pb-96">
+        <div className="pb-20 lg:pb-32 xl:pb-40">
           <ol className="relative border-l border-gray-200">
             <li className="mb-10 ml-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-black rounded-sm -left-3">
@@ -186,24 +201,6 @@ export default function Home() {
                 January 2023 - Current
               </time>
               <p className="mb-4 text-base font-normal text-gray-500"></p>
-              {/* <a
-                  href="#"
-                  className="inline-flex items-center px-4 py-2 text-sm font-medium text-gray-900 bg-white border border-gray-200 rounded-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:outline-none focus:ring-gray-200 focus:text-blue-700"
-                >
-                  <svg
-                    className="w-4 h-4 mr-2"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      fill-rule="evenodd"
-                      d="M6 2a2 2 0 00-2 2v12a2 2 0 002 2h8a2 2 0 002-2V7.414A2 2 0 0015.414 6L12 2.586A2 2 0 0010.586 2H6zm5 6a1 1 0 10-2 0v3.586l-1.293-1.293a1 1 0 10-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L11 11.586V8z"
-                      clip-rule="evenodd"
-                    ></path>
-                  </svg>{" "}
-                  Download ZIP
-                </a> */}
             </li>
             <li className="mb-10 ml-6">
               <span className="absolute flex items-center justify-center w-6 h-6 bg-black rounded-sm -left-3">
@@ -216,14 +213,6 @@ export default function Home() {
               <time className="block mb-2 text-sm font-normal leading-none text-gray-400 ">
                 October 2021 - June 2022
               </time>
-              {/* <p className="text-base font-normal text-gray-500 flex flex-col">
-                  <span>
-                  Conducted and analyzed 21 eye tracking experiments using EyeLink 1000 Plus, providing insights into user behavior/subject matter.
-                  </span>
-                  <span>
-                Published and presented my paper titled “Is GitHub Copilot a Substitute for Human Pair-programming? An Empirical Study” at ICSE ’22: 44th International Conference on Software Engineering 2022 ACM Student Research Competition
-                </span>
-                </p> */}
               <ul className="text-base font-normal text-gray-500 list-disc">
                 <li>
                   Conducted and analyzed 21 eye tracking experiments using
