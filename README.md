@@ -1,6 +1,6 @@
 ## About
 This is my personal website :)
-You can visit [this link](https://saki-imai.web.app/) to see the latest version.
+You can visit [this link](https://saki-imai.com/) to see the latest version.
 
 
 ## Getting Started
