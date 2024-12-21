@@ -56,12 +56,12 @@ export default function RootLayout({
                     would be thrilled to hear from you.
                   </span>
                   <div className="flex flex-row space-x-5">
-                    <span className="h-10 w-1/5 px-4 cursor-pointer appearance-none items-center justify-center rounded-full border border-stone-200 bg-black shadow outline-none inline-flex flex-row min-w-fit">
+                    {/* <span className="h-10 w-1/5 px-4 cursor-pointer appearance-none items-center justify-center rounded-full border border-stone-200 bg-black shadow outline-none inline-flex flex-row min-w-fit">
                       <AiOutlineMail color="white" className="mr-2" />
                       <span className="text-xs xl:text-lg text-white">
                         simai24@colby.edu
                       </span>
-                    </span>
+                    </span> */}
                     <SocialButton
                       icon={
                         <AiFillLinkedin className="text-blue-500" size={30} />

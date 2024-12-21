@@ -1,277 +1,147 @@
 "use client";
 
 import {
-  AiFillCheckSquare,
   AiOutlineMail,
   AiFillLinkedin,
   AiFillGithub,
 } from "react-icons/ai";
+
 import { SiGooglescholar } from "react-icons/si";
 
-import { HiCode } from "react-icons/hi";
-
-import { ProjectCard, SocialButton } from "@/components";
-
-import { useRouter } from "next/navigation";
-
 export default function Home() {
-  const router = useRouter();
-
   return (
     <>
-      <div className="px-10 xl:px-40 2xl:px-60 max-w-screen overflow-hidden">
-        <div className="flex py-10 xl:py-32 2xl:py-48 flex-col md:flex-row">
-          <div className="flex flex-col basis-3/4">
-            <div className="mb-6">
-              <span className=" text-xl lg:text-2xl xl:text-4xl font-semibold ">Hi! I am</span>
-              <span className=" text-xl lg:text-2xl xl:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-br from-yellow-400 via-pink-400 to-blue-400">
-                {" "}
-                Saki Imai
-              </span>
+      <div className="px-8 xl:px-40 2xl:px-60 max-w-screen overflow-hidden">
+        {/* --- Top Section: Two-Column Layout --- */}
+        <div className="flex flex-col md:flex-row md:items-start md:space-x-10 my-12">
+          {/* Left column: Photo + Name/Short Info */}
+          <div className="basis-full md:basis-1/3 flex flex-col items-center md:items-start">
+            <img
+              src="/Saki.JPG"
+              alt="Portrait of Saki Imai"
+              className="w-60 h-60 object-cover rounded-full shadow-md mb-4"
+            />
+            <h1 className="text-2xl lg:text-3xl font-bold mb-2">
+              Saki Imai
+            </h1>
+            <p className="text-gray-600 mb-2">
+              (she/her) <br />
+              PhD Student @ Northeastern University
+            </p>
+            <div className="flex mt-4 space-x-3">
+              {/* LinkedIn */}
+              <a
+                href="https://www.linkedin.com/in/saki-imai-1204/"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillLinkedin className="text-blue-500" size={30} />
+              </a>
+              {/* GitHub */}
+              <a
+                href="https://github.com/saki-imai-1204"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <AiFillGithub size={30} />
+              </a>
+              {/* Google Scholar */}
+              <a
+                href="https://scholar.google.com/citations?user=lO2jF24AAAAJ"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <SiGooglescholar size={30} />
+              </a>
             </div>
-            <span className=" text-xl lg:text-2xl xl:text-4xl font-semibold mb-6">
-              an aspiring Software Engineer{" "}
-            </span>
-            <span className=" text-xl lg:text-2xl xl:text-4xl font-semibold mb-6">
-              and a student researcher at Colby College
-            </span>
-            <span className=" text-xl lg:text-2xl xl:text-4xl font-semibold mb-6">
-              currently based in the United States.{" "}
-            </span>
           </div>
-          <div className="flex flex-wrap justify-center basis-1/4">
-            <div className="w-1/3 md:w-1/2">
-              <img
-                src="/Saki_resized.png"
-                alt="..."
-                className="shadow rounded-full max-w-full h-auto align-middle border-none"
-              />
+
+          {/* Right column: Your main "About" text */}
+          <div className="basis-full md:basis-2/3 mt-10 md:mt-0">
+            <p className="mb-4 text-lg">
+              I am a first-year PhD student in Computer Science at Northeastern
+              University, where I am advised by Dr. Malihe Alikhani. I am fortunate to be
+              supported by the Khoury Distinguished Fellowship.
+            </p>
+            <p className="mb-4 text-lg">
+              I completed my undergraduate at Colby College in Computer Science
+              and Mathematical Science. My primary research focuses on natural language processing,
+              with an emphasis on sign language processing, multimodal systems, and
+              accessibility technologies to empower underrepresented communities. I am also 
+              passionate about sustainable computing and its potential to make AI 
+              more environmentally responsible.
+            </p>
+            <p className="mb-4 text-lg">
+              In my free time, I enjoy critiquing classical ballet performances (Maria Khoreva is my favorite ballerina), 
+              running, and exploring new places through travel.
+            </p>
+          </div>
+        </div>
+
+        {/* --- News Section --- */}
+        <div className="my-20">
+          <span className="flex font-bold items-center text-xl lg:text-2xl xl:text-4xl justify-center mb-10">
+            News
+          </span>
+          <div className="space-y-4">
+            <div className="border-l-4 border-blue-500 pl-4 py-2">
+              <p className="text-gray-600 text-sm">January 20-25, 2025</p>
+              <p>
+                I will present a paper at COLING
+                2025 in Abu Dhabi.
+              </p>
             </div>
+            <div className="border-l-4 border-blue-500 pl-4 py-2">
+              <p className="text-gray-600 text-sm">December 20, 2024</p>
+              <p>
+                Our work on the usability of multimodal learning systems was published at IEEE Access. 
+              </p>
+            </div>
+            <div className="border-l-4 border-blue-500 pl-4 py-2">
+              <p className="text-gray-600 text-sm">December 15, 2024</p>
+              <p>
+                I am presenting a paper at ML for Systems Workshop at NeurIPS 2024 in Vancouver.
+              </p>
+            </div>
+            {/* Add more news items as needed */}
           </div>
         </div>
 
-        <div className="flex flex-row space-x-5 pb-10 xl:pb-32 2xl:pb-48">
-          <button
-            className="h-10 w-1/5 px-4 cursor-pointer appearance-none items-center justify-center rounded-full border border-stone-200 bg-black shadow outline-none inline-flex flex-row min-w-fit"
-            onClick={() => router.push("/contact")}
-          >
-            <AiOutlineMail color="white" className="mr-2" />
-            <span className="text-xs xl:text-lg text-white">Contact Me</span>
-          </button>
-          <SocialButton
-            icon={<AiFillLinkedin className="text-blue-500" size={30} />}
-            link="https://www.linkedin.com/in/saki-imai-1204/"
-          />
-          <SocialButton
-            icon={<AiFillGithub size={30} />}
-            link="https://github.com/saki-imai-1204"
-          />
-          <SocialButton
-            icon={<SiGooglescholar size={30} />}
-            link="https://scholar.google.com/citations?user=ZUSP9qIAAAAJ&hl=en"
-          />
-        </div>
-
-        <span className="flex font-bold items-center text-xl lg:text-2xl xl:text-4xl justify-center mb-20">
-          What I Do
-        </span>
-        <div className="flex flex-col xl:flex-row xl:justify-between space-y-10 xl:space-y-0 xl:space-x-20 mb-40">
-          <div className="flex flex-col space-y-5">
-            <AiFillCheckSquare size={30} />
-            <span className="font-semibold ">Machine Learning</span>
-            <span>
-              As a Machine Learning practitioner, my work revolves around
-              utilizing advanced technologies to enhance accessibility of STEM
-              domains for blind or visually blind students.
-            </span>
-          </div>
-          <div className="flex flex-col space-y-5">
-            <AiFillCheckSquare size={30} />
-            <span className="font-semibold">Web Development</span>
-            <span>
-              I design and develop websites that enhance user experiences and
-              optimize task efficiency. Explore the showcased projects below for
-              a glimpse of my work.
-            </span>
-          </div>
-          <div className="flex flex-col space-y-5">
-            <AiFillCheckSquare size={30} />
-            <span className="font-semibold">Research</span>
-            <span>
-              I have actively contributed to various research projects
-              encompassing a wide spectrum of disciplines, including eye
-              tracking studies, user experience studies, and machine learning
-              projects.
-            </span>
+        {/* --- Publications Section --- */}
+        <div className="my-20">
+          <span className="flex font-bold items-center text-xl lg:text-2xl xl:text-4xl justify-center mb-10">
+            Publications
+          </span>
+          <div className="space-y-10">
+            {/* Publication Card Example */}
+            <div className="border border-stone-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
+              <h3 className="text-lg font-semibold">
+                Is GitHub Copilot a Substitute for Human Pair-programming?
+              </h3>
+              <p className="text-gray-600 mt-2">
+                 ICSE ’22: 44th International Conference
+                on Software Engineering, ACM Student Research Competition.
+              </p>
+              <div className="mt-4 inline-flex items-center space-x-2">
+                <a
+                  href="https://www.linkedin.com/in/saki-imai-1204/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center bg-pink-200 text-pink-800 px-2 py-1 
+                            rounded-full text-xs font-semibold uppercase"
+                >
+                  PDF
+                </a>
+              </div>
+            </div>
+            {/* Add more publication cards as needed */}
           </div>
         </div>
 
-        <span className="flex font-bold items-center text-xl lg:text-2xl xl:text-4xl justify-center">
-          Projects
-        </span>
-        <div className="pb-10 lg:pb-20 xl:pb-40">
-          <ProjectCard
-            orientation="right"
-            image={"/colbycourses.png"}
-            demo={""}
-            title={"Reactflow Course Viewer"}
-            text={
-              "A course search interface for Colby College built using React and React Flow library. The project is based on Next.js and was bootstrapped with create-next-app."
-            }
-            code={"https://github.com/saki-imai-1204/reactflow-courses"}
-          />
-
-          <ProjectCard
-            orientation="left"
-            image={"/CUSRR2022.svg"}
-            demo={""}
-            title={"Accessible STEM Education"}
-            text={
-              "Our project goal is to develop an automated STEM graph description model that communicates both the embedded text data and inherent spatial information into theory-based accessible captions."
-            }
-            code={""}
-          />
-
-          <ProjectCard
-            orientation="right"
-            image={"/SRC-poster.svg"}
-            demo={"https://scholar.google.com/citations?view_op=view_citation&hl=en&user=ZUSP9qIAAAAJ&citation_for_view=ZUSP9qIAAAAJ:u-x6o8ySG0sC"}
-            title={"Eye tracking research"}
-            text={
-              "Designed and developed efficient PyQt5-based eye tracking analysis software, enabling a comprehensive comparison between human pair-programming and pair-programming with GitHub Copilot.\
-              Presented my findings at the ACM Student Research Competition."
-            }
-            code={"https://github.com/saki-imai-1204/EyeMovementVisualizer"}
-          />
-
-          <ProjectCard
-            orientation="left"
-            image={"/CLASposter.svg"}
-            demo={""}
-            title={"ML to detect Cyber Attacks"}
-            text={
-              "We conducted a comparative analysis between classical machine learning algorithms and brain-inspired neural networks to detect network attacks using the UNSW-NB15 dataset. \
-              Our findings were summarized in a poster presentation"
-            }
-            code={""}
-          />
-        </div>
-
-        <span className="flex items-center font-bold text-xl lg:text-2xl xl:text-4xl justify-center my-20">
-          Experiences
-        </span>
-        <div className="pb-20 lg:pb-32 xl:pb-40">
-          <ol className="relative border-l border-gray-200">
-            <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-black rounded-sm -left-3">
-                <HiCode className="text-white" />
-              </span>
-              <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
-                CS Research Assistant @ Davis Institute for Artificial
-                Intelligence
-                <span className="bg-blue-100 text-blue-800 text-sm font-medium mr-2 px-2.5 py-0.5 rounded  ml-3">
-                  Latest
-                </span>
-              </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400 ">
-                May 2023 - Current
-              </time>
-              <p className="text-base font-normal text-gray-500 "></p>
-            </li>
-            <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-black rounded-sm -left-3">
-                <HiCode className="text-white" />
-              </span>
-              <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
-                Summer 2023 Accenture Work Prep Participant
-              </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400 ">
-                May 2023
-              </time>
-              <p className="text-base font-normal text-gray-500 "></p>
-            </li>
-            <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-black rounded-sm -left-3">
-                <HiCode className="text-white" />
-              </span>
-              <h3 className="flex items-center mb-1 text-lg font-semibold text-gray-900">
-                Software Development Intern @ Jackson Laboratory{" "}
-              </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400">
-                January 2023 - Current
-              </time>
-              <p className="mb-4 text-base font-normal text-gray-500"></p>
-            </li>
-            <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-black rounded-sm -left-3">
-                <HiCode className="text-white" />
-              </span>
-              <h3 className="mb-1 text-lg font-semibold text-gray-900 ">
-                CS Research Assistant @ Software Engineering and Human Factors
-                Laboratory
-              </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400 ">
-                October 2021 - June 2022
-              </time>
-              <ul className="text-base font-normal text-gray-500 list-disc">
-                <li>
-                  Conducted and analyzed 21 eye tracking experiments using
-                  EyeLink 1000 Plus, providing insights into user
-                  behavior/subject matter.
-                </li>
-                <li>
-                  Developed efficient PyQt5-based eye-tracking analysis
-                  software, streamlining data analysis.
-                </li>
-                <li>
-                  Published and presented my paper titled “Is GitHub Copilot a
-                  Substitute for Human Pair-programming? An Empirical Study” at
-                  ICSE ’22: 44th International Conference on Software
-                  Engineering 2022 ACM Student Research Competition.
-                </li>
-              </ul>
-            </li>
-            <li className="mb-10 ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-black rounded-sm -left-3">
-                <HiCode className="text-white" />
-              </span>
-              <h3 className="mb-1 text-lg font-semibold text-gray-900">
-                CS Research Assistant @ Immersive Navigation Systems and
-                Inclusive Technology Ethics Lab (INSITE)
-              </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400">
-                June 2021 - Current
-              </time>
-              <ul className="text-base font-normal text-gray-500 list-disc">
-                <li>
-                  Classified 3000+ STEM charts/diagrams with Tensorflow and
-                  Singularity and achieved 97.27% accuracy.
-                </li>
-                <li>
-                  Analyzed 300+ STEM diagram descriptions with NLTK, revealing
-                  valuable insights for future project development.
-                </li>
-                <li>
-                  Collaborated with University of Maine researchers to establish
-                  a standardized user study protocol, improving study result
-                  consistency.
-                </li>
-              </ul>
-            </li>
-            <li className="ml-6">
-              <span className="absolute flex items-center justify-center w-6 h-6 bg-black rounded-sm -left-3">
-                <HiCode className="text-white" />
-              </span>
-              <h3 className="mb-1 text-lg font-semibold text-gray-900">
-                Bachelor in Computer Science & Mathematics Major @ Colby College
-              </h3>
-              <time className="block mb-2 text-sm font-normal leading-none text-gray-400">
-                August 2020 - Current
-              </time>
-            </li>
-          </ol>
-        </div>
       </div>
     </>
   );
 }
+
+
+
