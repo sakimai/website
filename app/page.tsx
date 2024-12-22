@@ -6,6 +6,7 @@ import {
   AiFillGithub,
 } from "react-icons/ai";
 
+import { Publication } from "@/components";
 import { SiGooglescholar } from "react-icons/si";
 import Head from 'next/head';
 
@@ -23,7 +24,7 @@ export default function Home() {
             <img
               src="/Saki.JPG"
               alt="Portrait of Saki Imai"
-              className="w-60 h-60 object-cover rounded-full shadow-md mb-4"
+              className="w-60 h-60 object-cover object-top rounded-full shadow-md mb-4"
             />
             <h1 className="text-2xl lg:text-3xl font-bold mb-2">
               Saki Imai
@@ -116,29 +117,32 @@ export default function Home() {
           <span className="flex font-bold items-center text-xl lg:text-2xl xl:text-4xl justify-center mb-10">
             Publications
           </span>
-          <div className="space-y-10">
+          <div className="">
             {/* Publication Card Example */}
-            <div className="border border-stone-200 rounded-lg p-6 hover:shadow-lg transition-shadow">
-              <h3 className="text-lg font-semibold">
-                Is GitHub Copilot a Substitute for Human Pair-programming?
-              </h3>
-              <p className="text-gray-600 mt-2">
-                 ICSE ’22: 44th International Conference
-                on Software Engineering, ACM Student Research Competition.
-              </p>
-              <div className="mt-4 inline-flex items-center space-x-2">
-                <a
-                  href="https://www.linkedin.com/in/saki-imai-1204/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center bg-pink-200 text-pink-800 px-2 py-1 
-                            rounded-full text-xs font-semibold uppercase"
-                >
-                  PDF
-                </a>
-              </div>
-            </div>
-            {/* Add more publication cards as needed */}
+            <Publication 
+              title="Evaluating Open-Source ASR Systems: Performance Across Diverse Audio Conditions and Error Correction Methods"
+              author="Saki Imai, Tahiya Chowdhury and Amanda Stent"
+              conference="International Conference on Computational Linguistics (COLING), 2025 "
+              pdfLink="https://www.linkedin.com/in/saki-imai-1204/"
+            />
+            <Publication 
+              title="Non-Visual Interfaces for Visual Learners: Multisensory Learning of Graphic Primitives"
+              author="Stacy Doore, Justin Brown, Saki Imai, Justin Dimmel, Nicholas Giudice"
+              conference="IEEE Access"
+              pdfLink="https://ieeexplore.ieee.org/stamp/stamp.jsp?arnumber=10786022"
+            />
+            <Publication 
+              title="Predicting LLM Inference Latency: A Roofline-Driven ML Method"
+              author="Saki Imai, Rina Nakazawa, Marcelo Amaral, Sunyanan Choochotkaew, Tatsuhiro Chiba"
+              conference="Annual Conference on Neural Information Processing Systems (NeurIPS), ML for Systems Workshop, 2024"
+              pdfLink="https://mlforsystems.org/assets/papers/neurips2024/paper28.pdf"
+            />
+            <Publication 
+              title="Is GitHub Copilot a Substitute for Human Pair-programming?"
+              author="Saki Imai"
+              conference="International Conference on Software Engineering (ICSE), ACM Student Research Competition, 2022."
+              pdfLink="https://dl.acm.org/doi/pdf/10.1145/3510454.3522684"
+            />
           </div>
         </div>
 
