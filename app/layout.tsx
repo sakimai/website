@@ -4,6 +4,7 @@ import { Header } from "@/components";
 import { SocialButton } from "@/components";
 import { AiOutlineMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiGooglescholar } from "react-icons/si";
+import Head from 'next/head';
 
 const ptserif = Nunito({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -21,6 +22,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <link rel="icon" href="/flower.png" type="image/png" sizes="any" />
+      </Head>
       <body className={ptserif.className}>
         <div className="w-full h-full fixed top-0 z-0">
           <div className="w-full h-full relative bg-img">

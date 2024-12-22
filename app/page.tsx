@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       <Head>
-      <link rel="icon" type="image/png" sizes="32x32" href="/flower.png" />
+        <link rel="icon" href="/flower.png" type="image/png" sizes="any" />
       </Head>
       <div className="px-8 xl:px-40 2xl:px-60 max-w-screen overflow-hidden">
         {/* --- Top Section: Two-Column Layout --- */}
