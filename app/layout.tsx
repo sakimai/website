@@ -10,9 +10,8 @@ const ptserif = Nunito({ weight: ["400", "700"], subsets: ["latin"] });
 
 export const metadata = {
   title: "Saki Imai",
-  description: "Hello, I'm Saki Imai, a junior majoring in Computer Science and Mathematical Sciences at Colby College. My interests lie at the intersection of software development, machine learning, and cybersecurity.\
-  My experience in software development has been shaped by my internships and research positions. From classifying STEM diagrams using transfer learning techniques to designing eye-tracking analysis software, I have gained proficiency in several programming languages and tools, including Python, Java, Tensorflow, Git, and Microsoft Azure.\
-  As a WiCyS conference student scholar, I'm committed to advancing the representation and participation of women in the tech industry. I'm passionate about learning and growing in the areas of software development, machine learning, and cybersecurity, and I'm eager to explore how I can apply my skills and knowledge in these fields to make a positive impact in my career.",
+  description: "I am a first-year PhD student in Computer Science at Northeastern\
+              University, where I am advised by Dr. Malihe Alikhani",
 };
 
 export default function RootLayout({
