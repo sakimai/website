@@ -70,11 +70,11 @@ export default function RootLayout({
                     />
                     <SocialButton
                       icon={<AiFillGithub size={30} />}
-                      link="https://github.com/saki-imai-1204"
+                      link="https://github.com/sakimai"
                     />
                     <SocialButton
                       icon={<SiGooglescholar size={30} />}
-                      link="https://scholar.google.com/citations?user=ZUSP9qIAAAAJ&hl=en"
+                      link="https://scholar.google.com/citations?user=lO2jF24AAAAJ"
                     />
                   </div>
                 </div>

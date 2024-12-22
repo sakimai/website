@@ -7,10 +7,14 @@ import {
 } from "react-icons/ai";
 
 import { SiGooglescholar } from "react-icons/si";
+import Head from 'next/head';
 
 export default function Home() {
   return (
     <>
+      <Head>
+      <link rel="icon" type="image/png" sizes="32x32" href="/flower.png" />
+      </Head>
       <div className="px-8 xl:px-40 2xl:px-60 max-w-screen overflow-hidden">
         {/* --- Top Section: Two-Column Layout --- */}
         <div className="flex flex-col md:flex-row md:items-start md:space-x-10 my-12">
@@ -39,7 +43,7 @@ export default function Home() {
               </a>
               {/* GitHub */}
               <a
-                href="https://github.com/saki-imai-1204"
+                href="https://github.com/sakimai"
                 target="_blank"
                 rel="noopener noreferrer"
               >
