@@ -70,7 +70,7 @@ export default function Home() {
             </p>
             <p className="mb-4 text-lg">
               I completed my undergraduate at Colby College in Computer Science
-              and Mathematical Science. My primary research focuses on natural language processing,
+              and Mathematical Sciences. My primary research focuses on natural language processing,
               with an emphasis on sign language processing, multimodal systems, and
               accessibility technologies to empower underrepresented communities. I am also 
               passionate about sustainable computing and its potential to make AI 
