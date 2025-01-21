@@ -123,7 +123,7 @@ export default function Home() {
               title="Evaluating Open-Source ASR Systems: Performance Across Diverse Audio Conditions and Error Correction Methods"
               author="Saki Imai, Tahiya Chowdhury and Amanda Stent"
               conference="International Conference on Computational Linguistics (COLING), 2025 "
-              pdfLink="https://www.linkedin.com/in/saki-imai-1204/"
+              pdfLink="https://aclanthology.org/2025.coling-main.336.pdf"
             />
             <Publication 
               title="Non-Visual Interfaces for Visual Learners: Multisensory Learning of Graphic Primitives"
