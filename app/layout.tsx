@@ -1,3 +1,5 @@
+"use client";
+
 import "./globals.css";
 import { Nunito } from "next/font/google";
 import { Header } from "@/components";
@@ -5,6 +7,8 @@ import { SocialButton } from "@/components";
 import { AiOutlineMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiGooglescholar } from "react-icons/si";
 import Head from 'next/head';
+import { useEffect } from 'react';
+import { initializeAnalytics } from './firebase/config';
 
 const ptserif = Nunito({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -19,6 +23,11 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  useEffect(() => {
+    // Initialize Firebase Analytics
+    const analytics = initializeAnalytics();
+  }, []);
+
   return (
     <html lang="en">
       <Head>
