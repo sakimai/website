@@ -1,14 +1,11 @@
-"use client";
-
 import "./globals.css";
 import { Nunito } from "next/font/google";
-import { Header } from "@/components";
+import { Header, ClientAnalytics} from "@/components";
 import { SocialButton } from "@/components";
 import { AiOutlineMail, AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { SiGooglescholar } from "react-icons/si";
 import Head from 'next/head';
 import { useEffect } from 'react';
-import { initializeAnalytics } from './firebase/config';
 
 const ptserif = Nunito({ weight: ["400", "700"], subsets: ["latin"] });
 
@@ -18,22 +15,14 @@ export const metadata = {
               University, where I am advised by Dr. Malihe Alikhani",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
-  useEffect(() => {
-    // Initialize Firebase Analytics
-    const analytics = initializeAnalytics();
-  }, []);
-
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <Head>
         <link rel="icon" href="/flower.png" type="image/png" sizes="any" />
       </Head>
       <body className={ptserif.className}>
+        <ClientAnalytics />
         <div className="w-full h-full fixed top-0 z-0">
           <div className="w-full h-full relative bg-img">
             <div className="w-full h-full grid grid-cols-12 space-x-6 px-20">

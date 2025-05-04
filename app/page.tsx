@@ -77,7 +77,7 @@ export default function Home() {
               more environmentally responsible.
             </p>
             <p className="mb-4 text-lg">
-              In my free time, I enjoy critiquing classical ballet performances (Maria Khoreva is my favorite ballerina), 
+              In my free time, I enjoy watching classical ballet performances, 
               running, and exploring new places through travel.
             </p>
           </div>
