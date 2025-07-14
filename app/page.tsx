@@ -65,8 +65,7 @@ export default function Home() {
           <div className="basis-full md:basis-2/3 mt-10 md:mt-0">
             <p className="mb-4 text-lg">
               I am a first-year PhD student in Computer Science at Northeastern
-              University, where I am advised by Dr. Malihe Alikhani. I am fortunate to be
-              supported by the Khoury Distinguished Fellowship.
+              University, where I am advised by Dr. Malihe Alikhani.
             </p>
             <p className="mb-4 text-lg">
               I completed my undergraduate at Colby College in Computer Science
